@@ -6,10 +6,12 @@ import { addItem } from  './actions/items';
 class App extends Component {
 
   handleOnClick() {
-    this.props.store.dispatch(addItem());
+    //this.props.store.dispatch(addItem()); 
+    this.props.addItem()
   }
 
-  render() {
+  render() { 
+    debugger;
     return (
       <div className="App">
         <button onClick={(event) => this.handleOnClick(event)}>
@@ -27,4 +29,15 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    addItem: () => { dispatch(addItem()) } 
+   
+  };
+};
+
+//export default connect(mapStateToProps)(App);  
+
+//export default connect(state => ({ items: state.items }), { addItem })(App);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
