@@ -9,7 +9,7 @@
 In the last lessons, we learned that `mapStateToProps()` separates
 concerns. We no longer have to reference the store inside our component when
 retrieving the state. We are moving towards having state management in one
-part of our code, and display logic in a different part.
+part of our code, and di splay logic in a different part.
 
 In other words, we're moving knowledge of _Redux_ outside our components.
 
